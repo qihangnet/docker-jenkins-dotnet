@@ -73,13 +73,13 @@ COPY init.groovy /usr/share/jenkins/ref/init.groovy.d/tcp-slave-agent-port.groov
 # ARG JENKINS_VERSION
 ENV JENKINS_VERSION 2.7.1
 # ARG JENKINS_SHA
-ENV JENKINS_SHA f61b8b604acba5076a93dcde28c0be2561d17bde
+ENV JENKINS_SHA 12d820574c8f586f7d441986dd53bcfe72b95453
 
 
 # could use ADD but this one does not check Last-Modified header 
 # see https://github.com/docker/docker/issues/8331
 RUN curl -fsSL http://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/2.7.1/jenkins-war-2.7.1.war -o /usr/share/jenkins/jenkins.war \
-  && echo "f61b8b604acba5076a93dcde28c0be2561d17bde  /usr/share/jenkins/jenkins.war" | sha1sum -c -
+  && echo "12d820574c8f586f7d441986dd53bcfe72b95453  /usr/share/jenkins/jenkins.war" | sha1sum -c -
 
 ENV JENKINS_UC https://updates.jenkins.io
 RUN chown -R ${user} "$JENKINS_HOME" /usr/share/jenkins/ref

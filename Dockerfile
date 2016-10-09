@@ -27,7 +27,7 @@ RUN echo "deb [arch=amd64] http://llvm.org/apt/jessie/ llvm-toolchain-jessie-3.6
     && rm -rf /var/lib/apt/lists/*
 
 # Install .NET Core SDK
-ENV DOTNET_CORE_SDK_VERSION 1.0.0-preview2-003121
+ENV DOTNET_CORE_SDK_VERSION 1.0.0-preview2-003131
 RUN curl -SL https://dotnetcli.blob.core.windows.net/dotnet/preview/Binaries/$DOTNET_CORE_SDK_VERSION/dotnet-dev-debian-x64.$DOTNET_CORE_SDK_VERSION.tar.gz --output dotnet.tar.gz \
     && mkdir -p /usr/share/dotnet \
     && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
